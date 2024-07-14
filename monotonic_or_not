@@ -1,0 +1,44 @@
+import java.util.*;
+class main
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(system.in);
+int n=sc.nextInt();
+int[] arr=new int[n];
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+}
+boolean ans=checkmono(arr);
+if(ans==true)
+{
+System.out.println("Monotonic");
+}
+else
+{
+System.out.println("Not Monotonic");
+}
+}
+public static boolean checkmono(int[] arr)
+{
+int N=arr.length();
+boolean inc=true;
+boolean dec=true;
+for(int i=0;i<N-1;i++)
+{
+if(arr[i]>arr[i+1])
+{
+inc=false;
+}
+}
+for(int i=0;i<N-1;i++)
+{
+if(arr[i]<arr[i-1])
+{
+dec=false;
+}
+}
+return inc||dec;
+}
+}
