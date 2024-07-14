@@ -1,0 +1,23 @@
+import java.util.*;
+class main
+{
+public static void main(String[] args)
+{
+Scanner sc= new Scanner(System.in);
+String str=sc.nextLine();
+boolean lc=false;
+for(int i=o;i<str.length();i++)
+{
+char c=str.charAt(i);
+if(character.isLower(c))
+{
+break;
+}
+else
+{
+lc=true;
+}
+System.out.print(c);
+}
+}
+}
