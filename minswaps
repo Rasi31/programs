@@ -1,0 +1,45 @@
+import java.util.*;
+class minswaps
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int[] arr=new int[n];
+for(int i=0;i<n;i++)
+{
+arr[i]=sc.nextInt();
+int k=sc.nextInt();
+int swap=minswap(arr,k)
+System.out.print(swap);
+}
+public static int minswap(int[]arr,int k)
+{
+int swap=0;
+int left=0;
+int right=arr.length-1;
+while(left<right)
+{
+while(arr[left]<k&&left<right)
+{
+left++;
+}
+while(arr[right]>=k&&left<right)
+{
+right--;
+}
+if(left<right)
+{
+swap(arr,left,right);
+swap++;
+}
+}
+return swap;
+}
+public static void swap(int[] arr, int i,int j)
+{
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+}
+}
