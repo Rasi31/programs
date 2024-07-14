@@ -1,0 +1,27 @@
+import java.util.*;
+class main
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+String input=sc.nextLine();
+int result=0;
+boolean digits=false;
+for(char c:input.toChararray())
+{
+if(Character.isDigit(c))
+{
+result=result*10+(c-'0');
+digits=true;
+}
+}
+if(digits)
+{
+System.out.println(result);
+}
+else
+{
+System.out.println(0);
+}
+}
+}
