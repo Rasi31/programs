@@ -1,0 +1,90 @@
+import java.util.*;
+public class Main 
+{
+    static class DLLNode 
+    {
+        int data;
+        DLLNode next;
+        DLLNode prev;
+        DLLNode(int data)
+        {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+    static class DoublyLinkedList 
+    {
+        static DLLNode head = null;
+        static DLLNode tail = null;
+        void create_node(int num)
+        {
+            DLLNode newnode =  new DLLNode(num);
+            if(head == null)
+            {
+                head = newnode;
+                tail = newnode;
+            }
+            else
+            {
+                tail.next = newnode;
+                newnode.prev = tail;
+                tail = newnode;
+            }
+        }
+        void delete_at_begin()
+        {
+            //Write your code here
+            head=head.next;
+        }
+        void delete_at_pos(int d)
+        {
+            DLLNode temp=head;
+            DLLNode prev=null;
+            for(int i=1;i<d;i++)
+            {
+                prev=temp;
+                temp=temp.next;
+            }
+            prev.next=temp.next;
+        }
+        void delete_at_end()
+        {
+            DLLNode temp=head;
+            DLLNode prev=null;
+            while(temp.next!=null)
+            {
+                prev=temp;
+                temp=temp.next;
+            }
+            prev.next=null;
+        }
+        void forward_display()
+        {
+            DLLNode tptr = head;
+            while(tptr != null)
+            {
+                System.out.print(tptr.data+" ");
+                tptr = tptr.next;
+            }
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        DoublyLinkedList DLL = new DoublyLinkedList();
+        int num;
+        while(true)
+        {
+            num = input.nextInt();
+            if(num == -1) break;
+            DLL.create_node(num);
+        }
+        int d=input.nextInt();
+        DLL.delete_at_begin();
+        DLL.delete_at_pos(d);
+        DLL.delete_at_end();
+        DLL.forward_display();
+        input.close();
+    }
+}
