@@ -1,0 +1,35 @@
+import java.util.*;
+class Absolute
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int diff=sc.nextInt();
+        int len=sc.nextInt();
+        int[] arr=new int[len];
+        for(int i=0;i<len;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        int res=countdiff(num,diff,len,arr);
+        System.out.println(res);
+    }
+    public static int countdiff(int num, int diff,int len,int[] arr)
+    {
+        int count=0;
+        for(int i=0;i<len;i++)
+        {
+            if((Math.abs(arr[i]-num)<=diff))
+            {
+                count++;
+            }
+        }
+        if(count==0)
+        {
+            return -1;
+        }
+        else {
+            return count;
+        }
+    }
+}
