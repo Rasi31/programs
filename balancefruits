@@ -1,0 +1,22 @@
+import java.util.*;
+class BalanaceFruits
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int m=sc.nextInt();
+        int rs=sc.nextInt();
+        System.out.println(countrupees(a,m,rs));
+    }
+    public static int countrupees(int a,int m,int rs)
+    {
+        if(a>m)
+        {
+            return (rs-(a-m));
+        }
+        else
+        {
+            return(rs+(m-a));
+        }
+    }
+}
