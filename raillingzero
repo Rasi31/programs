@@ -1,0 +1,22 @@
+import java.util.*;
+class raillingzero
+{
+public static void main(String[] args)
+{
+    Scanner sc=new Scanner(System.in);
+    int k=sc.nextInt();
+    System.out.println(count(k));
+}
+public static int count(int k)
+{
+    if(k<5)
+        return 0;
+    int sum=0;
+    while(k>=5)
+    {
+        sum=sum+k/5;
+        k=k/5;
+    }
+    return sum;
+}
+}
