@@ -1,0 +1,23 @@
+import java.util.*;
+class repeatnum
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int n;
+        int count=0;
+        for(int i=n1;i<=n2;i++)
+        {
+            int num=i;
+            n=num%10;
+            num=num/10;
+            if(n!=num)
+            {
+                System.out.print(i+" ");
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
