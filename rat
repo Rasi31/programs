@@ -1,0 +1,36 @@
+import java.util.*;
+class rat
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int unit = sc.nextInt();
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int tot = r * unit;
+        int count = 0;
+        int sum = 0;
+        int res = food( tot,sum,count,n,arr);
+        System.out.println(res);
+    }
+    public static int food(int tot,int sum,int count,int n,int[] arr)
+    {
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+arr[i];
+            count++;
+            if(sum>=tot)
+            {
+                break;
+            }
+        }
+        if(sum<tot)
+        {
+            return 0;
+        }
+        return count;
+    }
+}
