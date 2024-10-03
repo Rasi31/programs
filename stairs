@@ -1,0 +1,30 @@
+//stairs 
+import java.util.*;
+class stairs
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int steps=sc.nextInt();
+        if(steps>20)
+        {
+            System.out.println("Wrong Number");
+        }
+        else {
+            int res=fibbo(steps);
+            System.out.println(res);
+        }
+    }
+    public static int fibbo(int steps)
+    {
+        int n1=1;
+        int n2=2;
+        int n3=0;
+        for(int i=0;i<steps-1;i++)
+        {
+            n3=n1+n2;
+            n1=n2;
+            n2=n3;
+        }
+        return n1;
+    }
+}
