@@ -1,0 +1,24 @@
+import java.util.*;
+class diff
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        System.out.println(check(n,m));
+    }
+    public static int check(int n,int m)
+    {
+        int d=0,nd=0;
+        for(int i=1;i<=m;i++)
+        {
+            if(i%n==0)
+            {
+                d+=i;
+            }
+            else
+                nd+=i;
+        }
+        return(nd-d);
+    }
+}
