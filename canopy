@@ -1,0 +1,11 @@
+import java.util.*;
+class canopy
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int d=sc.nextInt();
+        double pi=3.14;
+        double area=pi*d*d;
+        System.out.println((int)area);
+    }
+}
