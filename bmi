@@ -1,0 +1,26 @@
+import java.util.*;
+class bmi
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int weight=sc.nextInt();
+        float height=sc.nextFloat();
+        float b=weight/(height*height);
+        System.out.println(calculate(b));
+    }
+    public static int calculate(float b)
+    {
+        if(b<18)
+            return  0;
+        if(b>=18 && b<25)
+            return 1;
+        if(b>25 && b<30)
+            return 2;
+        if(b>=30 && b<40)
+            return 3;
+        if(b>=40)
+            return 4;
+        else
+            return 0;
+    }
+}
